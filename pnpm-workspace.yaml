@@ -1,0 +1,4 @@
+ignoredBuiltDependencies:
+  - '@reown/appkit'
+  - bufferutil
+  - utf-8-validate
