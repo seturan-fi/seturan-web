@@ -1,9 +1,14 @@
+"use client";
 import { getDefaultConfig } from "@rainbow-me/rainbowkit";
-import { arbitrum } from "viem/chains";
+import { arbitrumSepolia } from "viem/chains";
+import { http } from "viem";
 
 export const config = getDefaultConfig({
-  appName: process.env.NEXT_PUBLIC_APP_NAME!,
-  projectId: process.env.NEXT_PUBLIC_PROJECT_ID!,
-  chains: [arbitrum],
+  appName: "Seturan Finance",
+  projectId: "YOUR_PROJECT_ID",
+  chains: [arbitrumSepolia],
+  transports: {
+    [arbitrumSepolia.id]: http(process.env.NEXT_PUBLIC_ARBITRUM_RPC),
+  },
   ssr: true,
 });

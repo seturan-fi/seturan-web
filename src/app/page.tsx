@@ -1,10 +1,5 @@
-import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return (
-    <>
-      <h1>seturan finance</h1>
-      <ConnectButton />
-    </>
-  );
+  redirect("/dashboard");
 }
