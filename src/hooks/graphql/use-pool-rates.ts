@@ -16,7 +16,7 @@ export interface PoolRate {
   apy: string;
 }
 
-const BASE_API_URL = `${process.env.NEXT_PUBLIC_POOL_API}lendingPoolRate/5003`;
+const BASE_API_URL = `${process.env.NEXT_PUBLIC_POOL_API}lendingPoolRate/421614`;
 
 const fetchPoolRate = async (poolAddress: string): Promise<PoolRate> => {
   const response = await fetch(`${BASE_API_URL}/${poolAddress}`);

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { getTokensArray } from "@/lib/addresses/tokens";
 import { Network, type TokenConfig } from "@/lib/addresses/types";
 
-const AVAILABLE_TOKENS: TokenConfig[] = getTokensArray(Network.MANTLE);
+const AVAILABLE_TOKENS: TokenConfig[] = getTokensArray(Network.ARBITRUM);
 
 const getInitialTokens = (): {
   base: TokenConfig | null;

@@ -14,7 +14,7 @@ import { ActionButton } from "@/components/card/pool-action-card/action-button";
 import { PoolSelectButton } from "./pool-select-button";
 import { SwapInput } from "./swap-input";
 
-const AVAILABLE_TOKENS: TokenConfig[] = getTokensArray(Network.MANTLE);
+const AVAILABLE_TOKENS: TokenConfig[] = getTokensArray(Network.ARBITRUM);
 
 interface SwapCardProps {
   className?: string;

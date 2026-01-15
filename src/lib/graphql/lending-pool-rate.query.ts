@@ -3,7 +3,7 @@ import { gql } from "graphql-request";
 export const queryPoolRates = () => {
   return gql`
     query {
-      lendingPoolRates(where: { contractChainId: 5003 }) {
+      lendingPoolRates(where: { contractChainId: 421614 }) {
         items {
           lendingPool
           apy

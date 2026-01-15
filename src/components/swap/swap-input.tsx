@@ -7,7 +7,7 @@ import { TokenSelectDialog } from "@/components/pool/token-select-dialog";
 import { getTokensArray } from "@/lib/addresses/tokens";
 import { Network, type TokenConfig } from "@/lib/addresses/types";
 
-const AVAILABLE_TOKENS: TokenConfig[] = getTokensArray(Network.MANTLE);
+const AVAILABLE_TOKENS: TokenConfig[] = getTokensArray(Network.ARBITRUM);
 
 interface SwapInputProps {
   label: string;

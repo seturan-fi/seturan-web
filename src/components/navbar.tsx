@@ -9,6 +9,7 @@ const navItems = [
   { label: "Dashboard", href: "/dashboard" },
   { label: "Swap", href: "/swap" },
   { label: "History", href: "/history" },
+  { label: "Faucet", href: "/faucet" },
 ];
 
 export const Navbar = () => {

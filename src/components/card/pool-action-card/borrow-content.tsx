@@ -19,7 +19,7 @@ import { helperAbi } from "@/lib/abis/helper-abi";
 
 const HELPER_ADDRESS =
   "0x6c454d20F4CB5f69e2D66693fA8deE931D7432dF" as HexAddress;
-const MANTLE_SEPOLIA_CHAIN_ID = 5003;
+const ARBITRUM_SEPOLIA_CHAIN_ID = 421614;
 
 export const BorrowContent = ({
   poolAddress,
@@ -41,7 +41,7 @@ export const BorrowContent = ({
   // Automatically determine if cross-chain based on selected chain
   const isCrossChain = useMemo(() => {
     if (!selectedChain) return false;
-    return Number(selectedChain.chainId) !== MANTLE_SEPOLIA_CHAIN_ID;
+    return Number(selectedChain.chainId) !== ARBITRUM_SEPOLIA_CHAIN_ID;
   }, [selectedChain]);
 
   // Get max borrow amount from Helper contract

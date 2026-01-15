@@ -16,7 +16,7 @@ import { Network } from "@/lib/addresses/types";
 import type { HexAddress } from "@/types/types.d";
 import type { TokenConfig } from "@/lib/addresses/types";
 
-const AVAILABLE_TOKENS = getTokensArray(Network.MANTLE);
+const AVAILABLE_TOKENS = getTokensArray(Network.ARBITRUM);
 
 export const RepayContent = ({
   poolAddress,

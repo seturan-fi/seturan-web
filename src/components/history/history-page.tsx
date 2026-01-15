@@ -61,7 +61,7 @@ export const HistoryPage = () => {
           Transaction History
         </h1>
         <p className="mt-1 text-sm text-neutral-400">
-          View all lending pool transactions on Mantle Sepolia
+          View all lending pool transactions on Arbitrum Sepolia
         </p>
       </div>
 

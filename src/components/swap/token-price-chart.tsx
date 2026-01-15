@@ -13,7 +13,7 @@ const TV_BASE_SYMBOL_MAP: Record<string, string | null> = {
   WETH: "ETH",
   USDC: "USDC",
   USDT: "USDT",
-  MANTLE: "MANTLE",
+  ARBITRUM: "ARB",
   WMNT: "MNT",
 };
 
@@ -62,7 +62,7 @@ const mapPairToTradingViewSymbol = (
   if (!baseSymbol || !quoteSymbol) return null;
   if (baseSymbol.toUpperCase() === quoteSymbol.toUpperCase()) return null;
 
-  // TradingView accepts MEXC:MANTLEUSDT style symbols; we normalise asset codes to lowercase.
+  // TradingView accepts MEXC:ARBUSDT style symbols; we normalise asset codes to lowercase.
   const base = baseSymbol.toLowerCase();
   const quote = quoteSymbol.toLowerCase();
 

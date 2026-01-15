@@ -10,7 +10,7 @@ export const createPositionQuery = (
         where: {
           user: "${userAddress.toLowerCase()}"
           lendingPool: "${lendingPoolAddress.toLowerCase()}"
-          contractChainId: 5003 
+          contractChainId: 421614 
 
         }
       ) {
@@ -29,7 +29,7 @@ export const getRouterByPoolQuery = (lendingPoolAddress: string) => {
       positionCreateds(
         where: {
           lendingPool: "${lendingPoolAddress.toLowerCase()}"
-          contractChainId: 5003
+          contractChainId: 421614
         }
         limit: 1
       ) {

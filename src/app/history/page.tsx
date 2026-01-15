@@ -3,7 +3,7 @@ import { HistoryPage } from "@/components/history";
 
 export const metadata: Metadata = {
   title: "Transaction History | Seturan",
-  description: "View all lending pool transactions on Mantle Sepolia",
+  description: "View all lending pool transactions on Arbitrum Sepolia",
 };
 
 export default function Page() {

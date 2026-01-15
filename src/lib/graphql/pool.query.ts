@@ -3,7 +3,7 @@ import { gql } from "graphql-request";
 export const queryPools = () => {
   return gql`
     query {
-      lendingPoolCreateds(where: { contractChainId: 5003 }) {
+      lendingPoolCreateds(where: { contractChainId: 421614 }) {
         items {
           lendingPool
           collateralToken

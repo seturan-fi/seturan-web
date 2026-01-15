@@ -57,7 +57,7 @@ export const useCreatePool = () => {
           throw new Error("Invalid parameters");
         }
 
-        const factoryAddress = getContractAddress(Network.MANTLE, "FACTORY");
+        const factoryAddress = getContractAddress(Network.ARBITRUM, "FACTORY");
         if (!factoryAddress) {
           throw new Error(
             "Factory address is not configured for current network"
@@ -108,7 +108,7 @@ export const useCreatePool = () => {
           hash: approveHash,
           confirmations: 1,
           pollingInterval: 2000,
-          timeout: 180_000, // 3 minutes for Mantle Sepolia
+          timeout: 180_000, // 3 minutes for  Sepolia
           retryCount: 5,
           retryDelay: 2000,
         });
@@ -142,7 +142,7 @@ export const useCreatePool = () => {
           hash,
           confirmations: 1,
           pollingInterval: 2000,
-          timeout: 180_000, // 3 minutes for Mantle Sepolia
+          timeout: 180_000,
           retryCount: 5,
           retryDelay: 2000,
         });

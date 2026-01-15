@@ -1,6 +1,6 @@
 "use client";
 
-import { useAccount } from "wagmi";
+import { useConnection } from "wagmi";
 import { Wallet } from "lucide-react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { PageContainer } from "@/components/layout/page-container";
@@ -11,7 +11,7 @@ import { usePools } from "@/hooks/graphql/use-pools";
 import { SwapPageSkeleton } from "@/components/skeleton/swap-page-skeleton";
 
 export const SwapPage = () => {
-  const { address, isConnecting } = useAccount();
+  const { address, isConnecting } = useConnection();
   const { baseToken, quoteToken, setBaseToken, setQuoteToken } =
     useChartTokens();
   const { isLoading: isLoadingPools } = usePools();

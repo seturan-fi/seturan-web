@@ -3,7 +3,7 @@ import { gql } from "graphql-request";
 export const querySupplyCollateralHistory = () => {
   return gql`
     query {
-      supplyCollaterals(where: { contractChainId: 5003 }, orderBy: "timestamp", orderDirection: "desc") {
+      supplyCollaterals(where: { contractChainId: 421614 }, orderBy: "timestamp", orderDirection: "desc") {
         items {
           id
           amount
@@ -21,7 +21,7 @@ export const querySupplyCollateralHistory = () => {
 export const querySupplyLiquidityHistory = () => {
   return gql`
     query {
-      supplyLiquiditys(where: { contractChainId: 5003 }, orderBy: "timestamp", orderDirection: "desc") {
+      supplyLiquiditys(where: { contractChainId: 421614 }, orderBy: "timestamp", orderDirection: "desc") {
         items {
           id
           amount
@@ -39,7 +39,7 @@ export const querySupplyLiquidityHistory = () => {
 export const queryWithdrawCollateralHistory = () => {
   return gql`
     query {
-      withdrawCollaterals(where: { contractChainId: 5003 }, orderBy: "timestamp", orderDirection: "desc") {
+      withdrawCollaterals(where: { contractChainId: 421614 }, orderBy: "timestamp", orderDirection: "desc") {
         items {
           id
           amount
@@ -57,7 +57,7 @@ export const queryWithdrawCollateralHistory = () => {
 export const queryWithdrawLiquidityHistory = () => {
   return gql`
     query {
-      withdrawLiquiditys(where: { contractChainId: 5003 }, orderBy: "timestamp", orderDirection: "desc") {
+      withdrawLiquiditys(where: { contractChainId: 421614 }, orderBy: "timestamp", orderDirection: "desc") {
         items {
           id
           amount
@@ -75,7 +75,7 @@ export const queryWithdrawLiquidityHistory = () => {
 export const queryBorrowHistory = () => {
   return gql`
     query {
-      borrowDebts(where: { contractChainId: 5003 }, orderBy: "timestamp", orderDirection: "desc") {
+      borrowDebts(where: { contractChainId: 421614 }, orderBy: "timestamp", orderDirection: "desc") {
         items {
           id
           amount
@@ -93,7 +93,7 @@ export const queryBorrowHistory = () => {
 export const queryRepayHistory = () => {
   return gql`
     query {
-      repayByPositions(where: { contractChainId: 5003 }, orderBy: "timestamp", orderDirection: "desc") {
+      repayByPositions(where: { contractChainId: 421614 }, orderBy: "timestamp", orderDirection: "desc") {
         items {
           id
           amount
@@ -111,7 +111,7 @@ export const queryRepayHistory = () => {
 export const queryCrossChainBorrowHistory = () => {
   return gql`
     query {
-      borrowDebtCrossChains(where: { contractChainId: 5003 }, orderBy: "timestamp", orderDirection: "desc") {
+      borrowDebtCrossChains(where: { contractChainId: 421614 }, orderBy: "timestamp", orderDirection: "desc") {
         items {
           id
           amount
@@ -130,7 +130,7 @@ export const queryCrossChainBorrowHistory = () => {
 export const queryLiquidationHistory = () => {
   return gql`
     query {
-      liquidations(where: { contractChainId: 5003 }, orderBy: "timestamp", orderDirection: "desc") {
+      liquidations(where: { contractChainId: 421614 }, orderBy: "timestamp", orderDirection: "desc") {
         items {
           id
           userBorrowAssets

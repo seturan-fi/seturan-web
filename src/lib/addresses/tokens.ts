@@ -1,10 +1,10 @@
 import { Network, TokensConfig, TokenSymbol, TokenConfig } from "./types";
 export const TOKENS: Record<Network, TokensConfig> = {
-  [Network.MANTLE]: {
-    [TokenSymbol.MNT]: {
-      name: "MNT",
-      symbol: "MNT",
-      logo: "/token/mantle.svg",
+  [Network.ARBITRUM]: {
+    [TokenSymbol.ETH]: {
+      name: "Ethereum",
+      symbol: "ETH",
+      logo: "/token/ethereum.png",
       decimals: 18,
       address: "0x0000000000000000000000000000000000000001",
     },
@@ -13,35 +13,35 @@ export const TOKENS: Record<Network, TokensConfig> = {
       symbol: "USDT",
       logo: "/token/usdt.png",
       decimals: 6,
-      address: "0xdF05e9AbF64dA281B3cBd8aC3581022eC4841FB2",
+      address: "0x04C37dc1b538E00b31e6bc883E16d97cD7937a10",
     },
     [TokenSymbol.USDC]: {
       name: "USD Coin",
       symbol: "USDC",
       logo: "/token/usdc.png",
       decimals: 6,
-      address: "0x04C37dc1b538E00b31e6bc883E16d97cD7937a10",
-    },
-    [TokenSymbol.WMNT]: {
-      name: "Wrapped MNT",
-      symbol: "WMNT",
-      logo: "/token/mantle.svg",
-      decimals: 18,
       address: "0x15858A57854BBf0DF60A737811d50e1Ee785f9bc",
+    },
+    [TokenSymbol.ARB]: {
+      name: "Arbitrum",
+      symbol: "ARB",
+      logo: "/chain/arbitrum.png",
+      decimals: 18,
+      address: "0x4Ba8D8083e7F3652CCB084C32652e68566E9Ef23",
     },
     [TokenSymbol.WETH]: {
       name: "Wrapped Ether",
       symbol: "WETH",
       logo: "/token/weth.png",
       decimals: 18,
-      address: "0x4Ba8D8083e7F3652CCB084C32652e68566E9Ef23",
+      address: "0x007F735Fd070DeD4B0B58D430c392Ff0190eC20F",
     },
     [TokenSymbol.WBTC]: {
       name: "Wrapped Bitcoin",
       symbol: "WBTC",
       logo: "/token/wbtc.png",
       decimals: 8,
-      address: "0x007F735Fd070DeD4B0B58D430c392Ff0190eC20F",
+      address: "0x5C368bd6cE77b2ca47B4ba791fCC1f1645591c84",
     },
   },
 };

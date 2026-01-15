@@ -4,14 +4,14 @@ import { useQuery } from "@tanstack/react-query";
 import { readContract } from "wagmi/actions";
 import { config } from "@/lib/config";
 import { parseUnits, formatUnits } from "viem";
-import { mantleSepoliaTestnet } from "viem/chains";
+import { arbitrumSepolia } from "viem/chains";
 import { helperAbi } from "@/lib/abis/helper-abi";
 import { getContractAddress, Network } from "@/lib/addresses";
 import type { HexAddress } from "@/types/types.d";
 
 const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000" as HexAddress;
 const HELPER_ADDRESS = getContractAddress(
-  Network.MANTLE,
+  Network.ARBITRUM,
   "HELPER"
 ) as HexAddress;
 
@@ -78,7 +78,7 @@ export const useExchangeRate = (
           parsedAmountIn,
           positionAddress ?? ZERO_ADDRESS,
         ],
-        chainId: mantleSepoliaTestnet.id,
+        chainId: arbitrumSepolia.id,
       });
 
       return result;

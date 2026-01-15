@@ -1,7 +1,7 @@
 export type Address = `0x${string}`;
 
 export enum Network {
-  MANTLE = "mantle",
+  ARBITRUM = "arbitrum",
 }
 
 export interface TokenConfig {
@@ -13,10 +13,10 @@ export interface TokenConfig {
 }
 
 export enum TokenSymbol {
-  MNT = "MNT",
+  ETH = "ETH",
   USDT = "USDT",
   USDC = "USDC",
-  WMNT = "WMNT",
+  ARB = "ARB",
   WETH = "WETH",
   WBTC = "WBTC",
 }

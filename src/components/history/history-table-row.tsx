@@ -6,57 +6,49 @@ import { ExternalLink } from "lucide-react";
 import type { HistoryItem, TransactionType } from "@/hooks/graphql/use-history";
 
 const CHAIN_NAMES: Record<number, string> = {
-  5003: "Mantle Sepolia",
+  421614: "Arbitrum Sepolia",
   84532: "Base Sepolia",
   // LayerZero EIDs
-  40267: "Mantle Sepolia",
+  40231: "Arbitrum Sepolia",
   40245: "Base Sepolia",
 };
 
 const getTransactionTypeConfig = (type: TransactionType) => {
   const configs: Record<
     TransactionType,
-    { label: string; color: string; bgColor: string }
+    { label: string; color: string }
   > = {
     supply_collateral: {
       label: "Supply Collateral",
-      color: "text-emerald-400",
-      bgColor: "bg-emerald-500/15 border-emerald-500/30",
+      color: "text-white",
     },
     supply_liquidity: {
       label: "Supply Liquidity",
-      color: "text-emerald-400",
-      bgColor: "bg-emerald-500/15 border-emerald-500/30",
+      color: "text-white",
     },
     withdraw_collateral: {
       label: "Withdraw Collateral",
-      color: "text-amber-400",
-      bgColor: "bg-amber-500/15 border-amber-500/30",
+      color: "text-white",
     },
     withdraw_liquidity: {
       label: "Withdraw Liquidity",
-      color: "text-amber-400",
-      bgColor: "bg-amber-500/15 border-amber-500/30",
+      color: "text-white",
     },
     borrow: {
       label: "Borrow",
-      color: "text-blue-400",
-      bgColor: "bg-blue-500/15 border-blue-500/30",
+      color: "text-white",
     },
     repay: {
       label: "Repay",
-      color: "text-violet-400",
-      bgColor: "bg-violet-500/15 border-violet-500/30",
+      color: "text-white",
     },
     crosschain_borrow: {
       label: "Cross-Chain Borrow",
-      color: "text-pink-400",
-      bgColor: "bg-pink-500/15 border-pink-500/30",
+      color: "text-white",
     },
     liquidation: {
       label: "Liquidation",
-      color: "text-red-400",
-      bgColor: "bg-red-500/15 border-red-500/30",
+      color: "text-white",
     },
   };
   return configs[type];
@@ -80,7 +72,7 @@ const getExplorerUrl = (txHash: string, type: TransactionType) => {
   if (type === "crosschain_borrow") {
     return `https://layerzeroscan.com/tx/${txHash}`;
   }
-  return `https://sepolia.mantlescan.xyz/tx/${txHash}`;
+  return `https://sepolia.arbiscan.io/tx/${txHash}`;
 };
 
 interface HistoryTableRowProps {
@@ -111,7 +103,7 @@ export const HistoryTableRow = ({ item }: HistoryTableRowProps) => {
     <tr className="bg-neutral-950/40 transition-colors hover:bg-neutral-900/70">
       <td className="px-4 py-4">
         <span
-          className={`inline-flex items-center rounded-none border px-2.5 py-1 text-xs font-medium ${config.bgColor} ${config.color}`}
+          className={`inline-flex items-center rounded-none px-2.5 py-1 text-xs font-medium ${config.color}`}
         >
           {config.label}
         </span>
@@ -179,7 +171,7 @@ export const HistoryTableRow = ({ item }: HistoryTableRowProps) => {
         {item.type === "crosschain_borrow" && item.destChainId ? (
           <div className="flex flex-col gap-0.5">
             <span className="text-xs text-neutral-400">
-              {CHAIN_NAMES[5003] || "Mantle Sepolia"}
+              {CHAIN_NAMES[421614] || "Arbitrum Sepolia"}
             </span>
             <span className="text-xs text-pink-400">
               → {CHAIN_NAMES[item.destChainId] || `Chain ${item.destChainId}`}
@@ -187,7 +179,8 @@ export const HistoryTableRow = ({ item }: HistoryTableRowProps) => {
           </div>
         ) : (
           <span className="text-sm text-neutral-400">
-            {CHAIN_NAMES[item.contractChainId] || `Chain ${item.contractChainId}`}
+            {CHAIN_NAMES[item.contractChainId] ||
+              `Chain ${item.contractChainId}`}
           </span>
         )}
       </td>

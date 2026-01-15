@@ -10,7 +10,7 @@ export interface Token {
 
 export type ChainName = Network;
 
-export const CURRENT_CHAIN: ChainName = Network.MANTLE;
+export const CURRENT_CHAIN: ChainName = Network.ARBITRUM;
 
 const buildTokensByAddress = (
   network: Network
