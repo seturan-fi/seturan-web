@@ -95,33 +95,73 @@ export function useGetFee({
     !!userAddress &&
     amount > BigInt(0);
 
-  const { data, isLoading, isError, error, refetch } = useQuery({
-    // Convert BigInt to string in query key for serialization
-    queryKey: getFeeKeys.fee({
-      helperAddress,
-      lendingPool,
-      userAddress,
-      amount: amount.toString(),
-      destEid,
-      destChainId: destChainId.toString(),
-      payInLzToken,
-      addExecutorLzReceiveOption: addExecutorLzReceiveOption.toString(),
-    }),
-    queryFn: async () => {
-      const borrowParams = buildBorrowParams();
+  // Debug logging
+  console.log("[useGetFee] Params check:", {
+    enabled,
+    helperAddress,
+    lendingPool,
+    userAddress,
+    amount: amount.toString(),
+    destEid,
+    destChainId: destChainId.toString(),
+    isEnabled,
+  });
 
-      const result = await readContract(config, {
-        address: helperAddress,
-        abi: helperAbi,
-        functionName: "getFee",
-        args: [borrowParams, lendingPool, payInLzToken],
-      });
+  const { data, isLoading, isError, error, refetch, status, fetchStatus } =
+    useQuery({
+      // Convert BigInt to string in query key for serialization
+      queryKey: getFeeKeys.fee({
+        helperAddress,
+        lendingPool,
+        userAddress,
+        amount: amount.toString(),
+        destEid,
+        destChainId: destChainId.toString(),
+        payInLzToken,
+        addExecutorLzReceiveOption: addExecutorLzReceiveOption.toString(),
+      }),
+      queryFn: async () => {
+        const borrowParams = buildBorrowParams();
 
-      return result;
-    },
-    enabled: isEnabled,
-    staleTime: 30_000, // 30 seconds
-    gcTime: 60_000, // 1 minute (previously cacheTime)
+        console.log("[useGetFee] Calling getFee with:", {
+          borrowParams,
+          lendingPool,
+          payInLzToken,
+        });
+
+        try {
+          const result = await readContract(config, {
+            address: "0x034cf520e48C7e87763466949058965F7a5A3181",
+            abi: helperAbi,
+            functionName: "getFee",
+            args: [borrowParams, lendingPool, payInLzToken],
+          });
+
+          console.log("[useGetFee] Result:", result);
+
+          return result;
+        } catch (err) {
+          console.error("[useGetFee] Contract call error:", err);
+          throw err;
+        }
+      },
+      enabled: isEnabled,
+      staleTime: 0, // Always fetch fresh data
+      gcTime: 0, // Don't cache
+      refetchOnMount: true,
+      retry: false, // Don't retry, show error immediately
+    });
+
+  // Debug query status
+  console.log("[useGetFee] Query status:", {
+    status,
+    fetchStatus,
+    isLoading,
+    isError,
+    error: error?.message || error,
+    data,
+    nativeFee: data?.[0]?.toString(),
+    lzTokenFee: data?.[1]?.toString(),
   });
 
   // Build borrowParams for export (to be used in mutations)

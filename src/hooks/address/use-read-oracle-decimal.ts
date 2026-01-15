@@ -5,7 +5,7 @@ import { tokenDataAbi } from "@/lib/abis/token-data-abi";
 
 export type HexAddress = `0x${string}`;
 
-const oracleAddress = "0x10FD0d8280E94D0DbC3013b778Ef26d47105Ea7b";
+const oracleAddress = "0x1fEAD2bdAaEbb03C2739949EA3B2145f064378F0";
 
 export const useReadOracleDecimal = (tokenAddress?: HexAddress) => {
   const {

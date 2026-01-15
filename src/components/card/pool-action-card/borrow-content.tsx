@@ -46,7 +46,7 @@ export const BorrowContent = ({
 
   // Get max borrow amount from Helper contract
   const { data: maxBorrowAmount } = useReadContract({
-    address: HELPER_ADDRESS,
+    address: "0x034cf520e48C7e87763466949058965F7a5A3181",
     abi: helperAbi,
     functionName: "getMaxBorrowAmount",
     args: [
@@ -160,7 +160,7 @@ export const BorrowContent = ({
             <p className="text-xs text-gray-400">
               LayerZero Fee:{" "}
               <span className="font-medium text-blue-200">
-                {formatUnits(nativeFee, 18)} MNT
+                {formatUnits(nativeFee, 18)} ETH
               </span>
             </p>
           )}

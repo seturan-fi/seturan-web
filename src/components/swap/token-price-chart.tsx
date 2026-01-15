@@ -14,7 +14,6 @@ const TV_BASE_SYMBOL_MAP: Record<string, string | null> = {
   USDC: "USDC",
   USDT: "USDT",
   ARBITRUM: "ARB",
-  WMNT: "MNT",
 };
 
 const TRADING_VIEW_CONTAINER_ID = "tradingview_token_chart";
